@@ -90,6 +90,7 @@ const ContactUs = () => {
                 <FaEnvelope className="text-2xl text-amber-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Email</h3>
+              <p className="text-gray-600">hr@brainytroves.com</p>
               <p className="text-gray-600">info@brainytroves.com</p>
               <p className="text-gray-600">careers@brainytroves.com</p>
             </div>
@@ -107,8 +108,8 @@ const ContactUs = () => {
                 <FaMapMarkerAlt className="text-2xl text-amber-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Location</h3>
-              <p className="text-gray-600">123 Business Avenue</p>
-              <p className="text-gray-600">New York, NY 10001</p>
+              <p className="text-gray-600">Electronic City</p>
+              <p className="text-gray-600">Bengaluru, Karnataka 560100</p>
             </div>
           </motion.div>
 
@@ -125,7 +126,7 @@ const ContactUs = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Working Hours</h3>
               <p className="text-gray-600">Monday - Friday</p>
-              <p className="text-gray-600">9:00 AM - 6:00 PM</p>
+              <p className="text-gray-600">9:00 AM - 9:00 PM</p>
             </div>
           </motion.div>
         </div>
