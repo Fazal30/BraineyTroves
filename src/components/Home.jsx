@@ -62,29 +62,13 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
-        style={{
-          background: `url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop') center/cover no-repeat fixed`,
-        }}
-      >
-        {/* Animated gradient overlay */}
-        <motion.div 
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-900 to-black">
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
-          className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/50 z-10" 
-        />
-        
-        {/* Content */}
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
           className="relative z-20 w-full max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-12"
         >
           {/* Text Content */}
@@ -183,96 +167,76 @@ const Home = () => {
           transition={{ duration: 1.5, delay: 0.5 }}
           className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-10" 
         />
-      </motion.div>
+      </section>
 
-      {/* Services Box */}
-      <motion.div
-        ref={ref}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        variants={staggerContainer}
-        className="mt-20 mb-20 px-4 max-w-7xl mx-auto"
-      >
-        <motion.div variants={fadeIn} className="text-center mb-16">
-          <span className="text-amber-500 font-medium mb-4 block">What We Offer</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our Services
-          </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Discover our comprehensive range of consultancy services designed to elevate your career and business success.
-          </p>
-        </motion.div>
+      {/* Services Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div variants={fadeIn} className="text-center mb-16">
+            <span className="text-amber-500 font-medium mb-4 block">What We Offer</span>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Our Services
+            </h1>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Discover our comprehensive range of consultancy services designed to elevate your career and business success.
+            </p>
+          </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            { 
-              title: "Executive Placement",
-              icon: "👔",
-              description: "Strategic placement of top-tier executives in leading organizations."
-            },
-            { 
-              title: "Graduate Recruitment",
-              icon: "🎓",
-              description: "Connecting fresh talent with promising career opportunities."
-            },
-            { 
-              title: "Career Transition",
-              icon: "🔄",
-              description: "Guiding professionals through successful career transitions."
-            },
-            { 
-              title: "Talent Acquisition",
-              icon: "🎯",
-              description: "Comprehensive recruitment solutions for businesses."
-            },
-            { 
-              title: "Market Analysis",
-              icon: "📊",
-              description: "In-depth market research and industry trend analysis."
-            }
-          ].map((service, index) => (
-            <motion.div
-              key={index}
-              variants={fadeIn}
-              whileHover={{ 
-                scale: 1.03,
-                boxShadow: "0px 8px 30px rgba(0,0,0,0.12)",
-                backgroundColor: "#fffbeb" 
-              }}
-              whileTap={{ scale: 0.98 }}
-              onClick={navigateToServices}
-              className="bg-white p-8 rounded-2xl transition-all duration-300 cursor-pointer flex flex-col items-center text-center group hover:border-amber-500 border-2 border-transparent"
-            >
-              <span className="text-4xl mb-4">{service.icon}</span>
-              <h4 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-amber-500">
-                {service.title}
-              </h4>
-              <p className="text-gray-600">
-                {service.description}
-              </p>
-            </motion.div>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { 
+                title: "Executive Placement",
+                icon: "👔",
+                description: "Strategic placement of top-tier executives in leading organizations."
+              },
+              { 
+                title: "Graduate Recruitment",
+                icon: "🎓",
+                description: "Connecting fresh talent with promising career opportunities."
+              },
+              { 
+                title: "Career Transition",
+                icon: "🔄",
+                description: "Guiding professionals through successful career transitions."
+              },
+              { 
+                title: "Talent Acquisition",
+                icon: "🎯",
+                description: "Comprehensive recruitment solutions for businesses."
+              },
+              { 
+                title: "Market Analysis",
+                icon: "📊",
+                description: "In-depth market research and industry trend analysis."
+              }
+            ].map((service, index) => (
+              <motion.div
+                key={index}
+                variants={fadeIn}
+                whileHover={{ 
+                  scale: 1.03,
+                  boxShadow: "0px 8px 30px rgba(0,0,0,0.12)",
+                  backgroundColor: "#fffbeb" 
+                }}
+                whileTap={{ scale: 0.98 }}
+                onClick={navigateToServices}
+                className="bg-white p-8 rounded-2xl transition-all duration-300 cursor-pointer flex flex-col items-center text-center group hover:border-amber-500 border-2 border-transparent"
+              >
+                <span className="text-4xl mb-4">{service.icon}</span>
+                <h4 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-amber-500">
+                  {service.title}
+                </h4>
+                <p className="text-gray-600">
+                  {service.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </motion.div>
+      </section>
 
-      {/* Crousel */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="mt-10"
-      >
-        <Crousel />
-      </motion.div>
-
-      {/* Why Choose Us */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={staggerContainer}
-        className="py-20 bg-gray-50"
-      >
+      {/* Statistics Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div variants={fadeIn} className="text-center mb-16">
             <span className="text-amber-500 font-medium mb-4 block">Why Choose Us</span>
@@ -342,13 +306,13 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </motion.div>
+      </section>
 
+      {/* Our Clients Section */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="mb-10"
       >
         <OurClient />
       </motion.div>

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiChevronDown } from "react-icons/bi";
+import logo from "../assets/BTC LOGO.png"; // Make sure to save the provided logo image in this path
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -30,8 +31,8 @@ const Navbar = () => {
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/services", label: "Services" },
-    { path: "/review", label: "About US" },
-    { path: "/contactus", label: "Contact US" },
+    { path: "/about", label: "About Us" },
+    { path: "/contactus", label: "Contact Us" },
   ];
 
   // Function to determine text color based on scroll state and background
@@ -60,12 +61,12 @@ const Navbar = () => {
           whileHover={{ scale: 1.02 }}
           className="flex flex-col items-center md:flex-row md:items-center cursor-pointer"
         >
-          <Link to="/">
-            <h1 className={`text-3xl md:text-4xl font-bold tracking-tight ${
-              scrolled ? "text-amber-500" : isLightBackground ? "text-amber-500" : "text-white"
-            }`}>
-              Brainy Troves
-            </h1>
+          <Link to="/" className="flex items-center">
+            <img 
+              src={logo} 
+              alt="Brainy Troves Logo" 
+              className="h-14 w-auto"
+            />
           </Link>
         </motion.div>
 
