@@ -23,8 +23,8 @@ const About = () => {
   };
 
   const stats = [
-    { number: "10+", label: "Years of Excellence", color: "from-blue-500 to-blue-600" },
-    { number: "500+", label: "Successful Projects", color: "from-amber-500 to-amber-600" },
+    { number: "4+", label: "Years of Excellence", color: "from-blue-500 to-blue-600" },
+    { number: "500+", label: "Successful Placements", color: "from-amber-500 to-amber-600" },
     { number: "98%", label: "Client Satisfaction", color: "from-green-500 to-green-600" },
     { number: "24/7", label: "Support Available", color: "from-purple-500 to-purple-600" },
   ];
