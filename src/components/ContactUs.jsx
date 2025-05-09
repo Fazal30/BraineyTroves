@@ -73,8 +73,8 @@ const ContactUs = () => {
                 <FaPhone className="text-2xl text-amber-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Phone</h3>
-              <p className="text-gray-600">+1 (555) 123-4567</p>
-              <p className="text-gray-600">+1 (555) 987-6543</p>
+              <p className="text-gray-600">+91 9620996689</p>
+             
             </div>
           </motion.div>
 
